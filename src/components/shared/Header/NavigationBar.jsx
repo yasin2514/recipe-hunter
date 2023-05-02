@@ -20,14 +20,14 @@ const NavigationBar = () => {
 
                 <div className={`flex lg:flex-row lg:gap-16   ${open ? "flex-col gap-2 mb-5 lg:m-0 " : ""}`}>
 
-                    <NavLink className={({ isActive }) => isActive ? "text-blue-700" : ''} to={'/'}>Home</NavLink>
-                    <NavLink className={({ isActive }) => isActive ? "text-blue-700" : ''} to={'/blog'}>Blog</NavLink>
-                    <NavLink className={({ isActive }) => isActive ? "text-blue-700" : ''} to={'/about'}>About</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "text-orange-500" : ''} to={'/'}>Home</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "text-orange-500" : ''} to={'/blog'}>Blog</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "text-orange-500" : ''} to={'/about'}>About</NavLink>
 
                 </div>
                 <div className='lg:flex gap-6'>
                     <img src="" alt="no imgae" />
-                    <NavLink className={({ isActive }) => isActive ? "text-blue-700" : ''} to={'/login'}>Login</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "text-orange-500" : ''} to={'/login'}>Login</NavLink>
                 </div>
             </div>
         </nav>

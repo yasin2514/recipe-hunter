@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.banner-1 {
+    background-image: url('./assets/banner-1.jpg');
+    background-size: cover;
+    background-blend-mode:multiply;
+}
+.banner-2 {
+    background-image: url('./assets/banner-2.jpg');
+    background-size: cover;
+    background-blend-mode:multiply;
+}
+.banner-3 {
+    background-image: url('./assets/banner-3.jpg');
+    background-size: cover;
+    background-blend-mode:multiply;
+}
