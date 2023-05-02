@@ -1,9 +1,36 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import register from '../../assets/registration.png';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProviders';
 
 
 const Registration = () => {
+    const { createUser } = useContext(AuthContext);
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
+
+    const handleSignUp = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const photoURL = form.photoURL.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(name, photoURL, email, password);
+        setError('');
+        setSuccess('');
+        createUser(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                form.reset();
+                setSuccess('User Created Successfully');
+
+            })
+            .catch(error => {
+                setError(error.message);
+            })
+    }
     return (
         <div className="hero min-h-screen ">
             <div className="hero-content flex-col lg:flex-row-reverse w-full">
@@ -16,7 +43,7 @@ const Registration = () => {
                     <h1 className="text-5xl font-bold mb-10 text-center">Please SignUp!</h1>
                     <div className="card flex-shrink-0 w-full  shadow-2xl  bg-base-100">
 
-                        <form className="card-body">
+                        <form className="card-body" onSubmit={handleSignUp}>
                             <div className="form-control">
                                 <label className="label" for='name'>
                                     <span className="label-text text-xl font-medium">Name</span>
@@ -51,6 +78,10 @@ const Registration = () => {
                                 <button className="btn btn-primary">Sign Up</button>
                             </div>
                         </form>
+                        <div className='px-8 mb-10'>
+                            <p className='text-green-600'>{success}</p>
+                            <p className='text-red-600'>{error}</p>
+                        </div>
                     </div>
                 </div>
             </div>
