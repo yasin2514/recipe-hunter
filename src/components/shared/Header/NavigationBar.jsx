@@ -30,9 +30,9 @@ const NavigationBar = () => {
 
                 <div className={`flex lg:flex-row lg:gap-16   ${open ? "flex-col gap-2 mb-5 lg:m-0 " : ""}`}>
 
-                    <NavLink className={({ isActive }) => isActive ? "text-orange-500" : ''} to={'/main'}>Home</NavLink>
-                    <NavLink className={({ isActive }) => isActive ? "text-orange-500" : ''} to={'/blog'}>Blog</NavLink>
-                    <NavLink className={({ isActive }) => isActive ? "text-orange-500" : ''} to={'/about'}>About</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "text-sky-600" : ''} to={'/main'}>Home</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "text-sky-600" : ''} to={'/blog'}>Blog</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "text-sky-600" : ''} to={'/about'}>Subscribe</NavLink>
 
                 </div>
                 <div className='lg:flex items-center gap-4 text-[1.2rem]'>
@@ -43,7 +43,7 @@ const NavigationBar = () => {
                                 <Link to={'/login'} onClick={handleLogOut}>Logout</Link>
                             </> :
                             <>
-                                <NavLink className={({ isActive }) => isActive ? "text-orange-500" : ''} to={'/login'}>Login</NavLink>
+                                <NavLink className={({ isActive }) => isActive ? "text-sky-600" : ''} to={'/login'}>Login</NavLink>
                             </>
                     }
                 </div>
