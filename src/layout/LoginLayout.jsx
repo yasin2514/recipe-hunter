@@ -6,11 +6,13 @@ import { Outlet } from 'react-router-dom';
 const LoginLayout = () => {
     return (
         <div>
-            <NavigationBar></NavigationBar>
-            <div className='max-w-6xl mx-auto  my-20'>
+            <div className='shadow shadow-slate-500'>
+                <NavigationBar></NavigationBar>
+            </div>
+            <div className='max-w-6xl mx-auto mb-20 mt-16'>
                 <Outlet></Outlet>
             </div>
-            <div className='mt-[calc(100vh_-_484px)]'>
+            <div className=''>
                 <Footer></Footer>
             </div>
         </div>
