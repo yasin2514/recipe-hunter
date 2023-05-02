@@ -15,7 +15,7 @@ const NavigationBar = () => {
     }
 
     return (
-        <nav className={`flex justify-between items-center py-5 max-w-[1300px] px-1 md:px-5 mx-auto lg:bg-transparent ${open ? "bg-pink-100" : "bg-transparent"}`}>
+        <nav className={`flex justify-between items-center py-5 max-w-[1300px] px-1 md:px-5 mx-auto lg:bg-transparent ${open ? "bg-white" : "bg-transparent"}`}>
             <div className='w-1/2'>
                 <Link to={'/main'} className='font-bold text-3xl sm:text-4xl '>The Chef Point</Link>
             </div>
@@ -26,7 +26,7 @@ const NavigationBar = () => {
                         <HiBars3CenterLeft ></HiBars3CenterLeft>
                 }
             </span>
-            <div className={`justify-between lg:m-0 absolute lg:flex lg:static items-center w-full text-xl lg:bg-transparent text-dark font-medium ${open ? "inset-x-0 top-0 px-5 py-2 lg:p-0 mt-16 bg-pink-100" : "-mt-64 bg-transparent"}`}>
+            <div className={`justify-between lg:m-0 absolute lg:flex lg:static items-center w-full text-xl lg:bg-transparent text-dark font-medium ${open ? "inset-x-0 top-0 px-5 py-2 lg:p-0 mt-16 bg-white" : "-mt-64 bg-transparent"}`}>
 
                 <div className={`flex lg:flex-row lg:gap-16   ${open ? "flex-col gap-2 mb-5 lg:m-0 " : ""}`}>
 
