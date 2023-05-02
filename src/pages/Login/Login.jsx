@@ -5,8 +5,8 @@ import login from '../../assets/login.png';
 
 const Login = () => {
     const { loginUser } = useContext(AuthContext);
-    const [error, setError] = useState('');
-    const [success, setSuccess] = useState('');
+    const [error, setError] = useState(null);
+    const [success, setSuccess] = useState(null);
 
     const handleLogin = event => {
         event.preventDefault();
@@ -14,15 +14,14 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
-        setError('');
-        setSuccess('');
+        setError(null);
+        setSuccess(null);
         loginUser(email, password)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                form.reset();
                 setSuccess('User Login  Successfully');
-
+                form.reset();
             })
             .catch(error => {
                 setError(error.message);
@@ -58,7 +57,7 @@ const Login = () => {
                             </div>
                             <div>
                                 <label className="label">
-                                    <p className="label-text-alt">New User? <Link className='link link-hover' to={'/register'}>Register Here</Link></p>
+                                    <p className="label-text-alt">New User? <Link className='link link-hover text-red-600' to={'/register'}>Register Here</Link></p>
                                 </label>
                             </div>
                             <div className="form-control mt-6">

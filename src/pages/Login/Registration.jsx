@@ -2,12 +2,13 @@ import React, { useContext, useState } from 'react';
 import register from '../../assets/registration.png';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProviders';
+import { updateProfile } from 'firebase/auth';
 
 
 const Registration = () => {
     const { createUser } = useContext(AuthContext);
-    const [error, setError] = useState('');
-    const [success, setSuccess] = useState('');
+    const [error, setError] = useState(null);
+    const [success, setSuccess] = useState(null);
 
     const handleSignUp = event => {
         event.preventDefault();
@@ -17,12 +18,13 @@ const Registration = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name, photoURL, email, password);
-        setError('');
-        setSuccess('');
+        setError(null);
+        setSuccess(null);
         createUser(email, password)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                userProfileUpdate(loggedUser, name, photoURL);
                 form.reset();
                 setSuccess('User Created Successfully');
 
@@ -30,6 +32,14 @@ const Registration = () => {
             .catch(error => {
                 setError(error.message);
             })
+    };
+
+    const userProfileUpdate = (currentUser, displayName, photoURL) => {
+        updateProfile(currentUser, {
+            displayName,
+            photoURL,
+        })
+
     }
     return (
         <div className="hero min-h-screen ">
@@ -71,7 +81,7 @@ const Registration = () => {
                             </div>
                             <div>
                                 <label className="label">
-                                    <p className="label-text-alt">Already have an Account? <Link className='link link-hover' to={'/login'}>Login Here</Link></p>
+                                    <p className="label-text-alt">Already have an Account? <Link className='link link-hover text-red-500' to={'/login'}>Login Here</Link></p>
                                 </label>
                             </div>
                             <div className="form-control mt-6">

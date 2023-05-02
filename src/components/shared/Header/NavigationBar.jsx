@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { HiBars3CenterLeft, HiXMark } from "react-icons/hi2";
+import { AuthContext } from '../../../contexts/AuthProviders';
 
 const NavigationBar = () => {
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(false);
+    const { user, logOut } = useContext(AuthContext);
+
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
+
     return (
         <nav className={`flex justify-between items-center py-5 max-w-[1300px] px-1 md:px-5 mx-auto lg:bg-transparent ${open ? "bg-pink-100" : "bg-transparent"}`}>
             <div className='w-1/2'>
@@ -25,9 +35,17 @@ const NavigationBar = () => {
                     <NavLink className={({ isActive }) => isActive ? "text-orange-500" : ''} to={'/about'}>About</NavLink>
 
                 </div>
-                <div className='lg:flex gap-6'>
-                    <img src="" alt="no imgae" />
-                    <NavLink className={({ isActive }) => isActive ? "text-orange-500" : ''} to={'/login'}>Login</NavLink>
+                <div className='lg:flex items-center gap-6'>
+                    {
+                        user ?
+                            <>
+                                <img src={user?.photoURL} title={user?.displayName} className='w-10 h-10 rounded-full' alt="profile image" />
+                                <Link to={'/login'} onClick={handleLogOut}>Logout</Link>
+                            </> :
+                            <>
+                                <NavLink className={({ isActive }) => isActive ? "text-orange-500" : ''} to={'/login'}>Login</NavLink>
+                            </>
+                    }
                 </div>
             </div>
         </nav>
