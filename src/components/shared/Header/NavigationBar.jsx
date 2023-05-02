@@ -35,7 +35,7 @@ const NavigationBar = () => {
                     <NavLink className={({ isActive }) => isActive ? "text-orange-500" : ''} to={'/about'}>About</NavLink>
 
                 </div>
-                <div className='lg:flex items-center gap-6'>
+                <div className='lg:flex items-center gap-4 text-[1.2rem]'>
                     {
                         user ?
                             <>

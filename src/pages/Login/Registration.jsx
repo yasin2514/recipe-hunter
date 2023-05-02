@@ -17,16 +17,18 @@ const Registration = () => {
         const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, photoURL, email, password);
         setError(null);
         setSuccess(null);
+        if (password.length < 6) {
+            setError("Password Must contain 6 character or more");
+            return;
+        }
         createUser(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
                 userProfileUpdate(loggedUser, name, photoURL);
-                form.reset();
                 setSuccess('User Created Successfully');
+                form.reset();
 
             })
             .catch(error => {

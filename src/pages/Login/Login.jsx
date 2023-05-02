@@ -4,7 +4,7 @@ import { AuthContext } from '../../contexts/AuthProviders';
 import login from '../../assets/login.png';
 
 const Login = () => {
-    const { loginUser } = useContext(AuthContext);
+    const { loginUser, googleLogin, gitHubLogin } = useContext(AuthContext);
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
 
@@ -13,15 +13,33 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
         setError(null);
         setSuccess(null);
         loginUser(email, password)
             .then(result => {
-                const loggedUser = result.user;
-                console.log(loggedUser);
                 setSuccess('User Login  Successfully');
                 form.reset();
+            })
+            .catch(error => {
+                setError(error.message);
+            })
+    };
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(result => {
+                setSuccess("Google Login Successfully");
+            })
+            .catch(error => {
+                setError(error.message);
+            })
+    };
+
+    const handleGithubLogin = () => {
+        gitHubLogin()
+            .then(result => {
+                console.log(result.user);
+                setSuccess("Github Login Successfully");
             })
             .catch(error => {
                 setError(error.message);
@@ -65,8 +83,8 @@ const Login = () => {
                             </div>
                         </form>
                         <div className='w-full px-8 mb-5'>
-                            <button className='btn w-full'>Login With Google</button>
-                            <button className='btn btn-success w-full my-5'>Login With Github</button>
+                            <button className='btn w-full' onClick={handleGoogleLogin}>Login With Google</button>
+                            <button className='btn btn-success w-full my-5' onClick={handleGithubLogin}>Login With Github</button>
                         </div>
                         <div className='px-8 mb-10'>
                             <p className='text-green-600'>{success}</p>
