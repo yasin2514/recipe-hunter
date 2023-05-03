@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-
+import { HiThumbUp } from "react-icons/hi";
 const ChefBanner = () => {
     const chef = useLoaderData();
     const { id, chefPicture, chefName, yearsOfExperience, numberOfRecipes, likes, description } = chef;
@@ -14,8 +14,8 @@ const ChefBanner = () => {
                 <h2 className="text-4xl font-bold">{chefName}</h2>
                 <p>Years of experience: {yearsOfExperience} years</p>
                 <p>Total recipes: {numberOfRecipes}</p>
-                <p>{likes} Likes</p>
                 <p>{description}</p>
+                <span className='flex text-blue-700 '><HiThumbUp className='text-2xl'></HiThumbUp> {likes} </span>
             </div>
         </div>
     );

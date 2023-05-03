@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { HiThumbUp } from "react-icons/hi";
 
 
 const ChefCard = ({ chef }) => {
@@ -11,7 +12,7 @@ const ChefCard = ({ chef }) => {
                 <h2 className="card-title">{chefName}</h2>
                 <p>Years of experience: {yearsOfExperience} years</p>
                 <p>Total recipes: {numberOfRecipes}</p>
-                <p className='text-blue-600'>{likes} Likes</p>
+                <span className='flex text-blue-600'><HiThumbUp className='text-2xl'></HiThumbUp> {likes} </span>
                 <div className="card-actions">
                     <Link className="btn btn-sm btn-primary" to={`/chef/${id}`}>View Recipes</Link>
                 </div>

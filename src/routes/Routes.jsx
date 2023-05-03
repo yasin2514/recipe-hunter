@@ -8,11 +8,13 @@ import Registration from "../pages/Login/Registration";
 import LoginLayout from "../layout/LoginLayout";
 import ChefLayout from "../layout/ChefLayout";
 import PrivateRoutes from "./PrivateRoutes";
+import ErrorPage from "../components/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <LoginLayout></LoginLayout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
 
             {
@@ -48,7 +50,8 @@ const router = createBrowserRouter([
         path: '/chef/:id',
         element: <PrivateRoutes><ChefLayout></ChefLayout></PrivateRoutes>,
         loader: ({ params }) => fetch(`https://chef-recipe-hunter-server-side-yasin2514.vercel.app/chef/${params.id}`)
-    }
+    },
+
 
 ])
 
