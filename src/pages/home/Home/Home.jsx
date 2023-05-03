@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import ChefCard from './Chef/ChefCard';
+import ChefCard from '../Chef/ChefCard';
+import ClientReviews from '../Reviews/ClientReviews';
 
 
 const Home = () => {
@@ -21,6 +22,9 @@ const Home = () => {
                         ></ChefCard>)
                     }
                 </div>
+            </section>
+            <section>
+                <ClientReviews></ClientReviews>
             </section>
         </>
     );
