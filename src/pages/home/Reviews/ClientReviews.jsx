@@ -7,8 +7,8 @@ import { HiStar } from "react-icons/hi";
 const ClientReviews = () => {
     return (
         <>
-            <div className='mb-16 mt-32'>
-                <h2 className='text-4xl font-bold text-center text-black'>CLIENT REVIEWS</h2>
+            <div className='mb-14'>
+                <h2 className='text-4xl font-bold text-center text-black'><span className='text-sky-600'>CLIENT </span>REVIEWS</h2>
                 <p className='text-green-600 font-medium text-center mt-3'>What Client Say</p>
             </div>
             <div className='flex'>
