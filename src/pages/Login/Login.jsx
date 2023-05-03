@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProviders';
-import login from '../../assets/login.png';
+import Lottie from "lottie-react";
+import login from '/public/93385-login.json';
 
 const Login = () => {
     const { loginUser, googleLogin, gitHubLogin } = useContext(AuthContext);
@@ -57,11 +58,13 @@ const Login = () => {
             <div className="hero-content flex-col lg:flex-row-reverse w-full">
 
                 <div className="text-center lg:text-left w-full">
-                    <img src={login} alt="" />
+                    <Lottie
+                        animationData={login}
+                    />
                 </div>
 
                 <div className=' w-full'>
-                    <h1 className="text-5xl font-bold mb-10 text-center">Login!</h1>
+                    <h1 className="text-5xl font-bold mb-10 text-center text-blue-600">Login!</h1>
                     <div className="card flex-shrink-0 w-full  shadow-2xl  bg-base-100">
 
                         <form className="card-body" onSubmit={handleLogin}>

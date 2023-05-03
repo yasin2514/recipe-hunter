@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const ChefCard = ({ chef }) => {
     const { chefName, id, chefPicture, yearsOfExperience, numberOfRecipes, likes } = chef;
     return (
-        <div className="card card-side bg-base-100 shadow-md shadow-slate-400">
+        <div className="card card-side bg-gray-50 shadow-md shadow-slate-400">
             <figure className='w-full'><img src={chefPicture} alt="chef image" /></figure>
             <div className="card-body w-full">
                 <h2 className="card-title">{chefName}</h2>

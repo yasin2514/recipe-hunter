@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
-import register from '../../assets/registration.png';
+import Lottie from "lottie-react";
+import register from '/public/107800-login-leady.json';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProviders';
 import { updateProfile } from 'firebase/auth';
@@ -48,11 +49,13 @@ const Registration = () => {
             <div className="hero-content flex-col lg:flex-row-reverse w-full">
 
                 <div className="text-center lg:text-left w-full">
-                    <img src={register} alt="" />
+                    <Lottie
+                        animationData={register}
+                    />
                 </div>
 
                 <div className=' w-full'>
-                    <h1 className="text-5xl font-bold mb-10 text-center">SignUp!</h1>
+                    <h1 className="text-5xl font-bold mb-10 text-center text-blue-600">SignUp!</h1>
                     <div className="card flex-shrink-0 w-full  shadow-2xl  bg-base-100">
 
                         <form className="card-body" onSubmit={handleSignUp}>
