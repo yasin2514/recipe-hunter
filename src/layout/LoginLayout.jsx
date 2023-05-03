@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import NavigationBar from '../components/shared/header/NavigationBar';
 import Footer from '../components/shared/footer/Footer';
 import { Outlet } from 'react-router-dom';
+import { AuthContext } from '../contexts/AuthProviders';
+import Loading from '../components/Loading';
 
 const LoginLayout = () => {
+    const { loading } = useContext(AuthContext);
+    if (loading) {
+        return <Loading></Loading>
+    }
     return (
         <>
             <div className='shadow shadow-slate-500'>

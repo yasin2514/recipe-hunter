@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const RecipeCard = ({ recipe }) => {
     const { id, name, ingredients, cookingMethod, image, rating } = recipe;
+    const [hide, setHide] = useState(false);
 
-    const handleToast = (id) => {
-        console.log('btn click', id)
+    const handleToast = () => {
+        setHide(true);
+        toast.success('Successfully Added👌', {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+        });
+
     }
     return (
         <div className="card card-side shadow shadow-gray-300 my-10">
@@ -28,7 +42,8 @@ const RecipeCard = ({ recipe }) => {
                     <span>{rating}</span>
                 </span>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary btn-sm" onClick={() => handleToast(id)}>Favorite </button>
+                    <button className="btn btn-primary btn-sm" onClick={handleToast} disabled={hide}>Favorite </button>
+                    <ToastContainer />
                 </div>
             </div>
         </div>
@@ -36,3 +51,4 @@ const RecipeCard = ({ recipe }) => {
 };
 
 export default RecipeCard;
+
