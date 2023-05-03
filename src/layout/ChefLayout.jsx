@@ -8,7 +8,7 @@ import ChefBanner from '../pages/home/Chef/ChefBanner';
 const ChefLayout = () => {
     return (
         <>
-            <div className='shadow shadow-slate-500 mb-[1px]'>
+            <div className='shadow shadow-slate-500 mb-[2px]'>
                 <NavigationBar></NavigationBar>
             </div>
             <ChefBanner></ChefBanner>

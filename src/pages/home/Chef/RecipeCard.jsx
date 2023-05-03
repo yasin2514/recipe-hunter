@@ -9,7 +9,7 @@ const RecipeCard = ({ recipe }) => {
                 <h2 className="card-title">{name}</h2>
                 <p>CookingMethod: {cookingMethod}</p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary btn-sm">Watch</button>
+                    <button className="btn btn-primary btn-sm">Favorite </button>
                 </div>
             </div>
         </div>

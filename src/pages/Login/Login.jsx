@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProviders';
 import login from '../../assets/login.png';
 
@@ -7,6 +7,11 @@ const Login = () => {
     const { loginUser, googleLogin, gitHubLogin } = useContext(AuthContext);
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
+    const location = useLocation();
+    const navigate = useNavigate();
+
+
+    const from = location.state?.from?.pathname || '/home';
 
     const handleLogin = event => {
         event.preventDefault();
@@ -18,6 +23,7 @@ const Login = () => {
         loginUser(email, password)
             .then(result => {
                 setSuccess('User Login  Successfully');
+                navigate(from, { relative: true });
                 form.reset();
             })
             .catch(error => {
@@ -28,6 +34,7 @@ const Login = () => {
     const handleGoogleLogin = () => {
         googleLogin()
             .then(result => {
+                navigate(from, { relative: true });
                 setSuccess("Google Login Successfully");
             })
             .catch(error => {
@@ -38,7 +45,7 @@ const Login = () => {
     const handleGithubLogin = () => {
         gitHubLogin()
             .then(result => {
-                console.log(result.user);
+                navigate(from, { relative: true });
                 setSuccess("Github Login Successfully");
             })
             .catch(error => {
@@ -54,7 +61,7 @@ const Login = () => {
                 </div>
 
                 <div className=' w-full'>
-                    <h1 className="text-5xl font-bold mb-10 text-center">Please Login!</h1>
+                    <h1 className="text-5xl font-bold mb-10 text-center">Login!</h1>
                     <div className="card flex-shrink-0 w-full  shadow-2xl  bg-base-100">
 
                         <form className="card-body" onSubmit={handleLogin}>

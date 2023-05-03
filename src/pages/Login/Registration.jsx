@@ -52,7 +52,7 @@ const Registration = () => {
                 </div>
 
                 <div className=' w-full'>
-                    <h1 className="text-5xl font-bold mb-10 text-center">Please SignUp!</h1>
+                    <h1 className="text-5xl font-bold mb-10 text-center">SignUp!</h1>
                     <div className="card flex-shrink-0 w-full  shadow-2xl  bg-base-100">
 
                         <form className="card-body" onSubmit={handleSignUp}>
