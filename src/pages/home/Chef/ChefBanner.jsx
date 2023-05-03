@@ -10,11 +10,11 @@ const ChefBanner = () => {
             <div className=' w-4/5 py-10  flex justify-center'>
                 <img src={chefPicture} alt="chef image" className='object-cover bg-gray-900 rounded-full  border-black' />
             </div>
-            <div className=" w-full flex flex-col gap-2 text-black">
+            <div className=" w-full flex flex-col gap-2 font-medium text-black">
                 <h2 className="text-4xl font-bold">{chefName}</h2>
                 <p>Years of experience: {yearsOfExperience} years</p>
                 <p>Total recipes: {numberOfRecipes}</p>
-                <p className=''>{likes} Likes</p>
+                <p>{likes} Likes</p>
                 <p>{description}</p>
             </div>
         </div>
