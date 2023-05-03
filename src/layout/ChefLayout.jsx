@@ -8,14 +8,14 @@ import ChefBanner from '../pages/home/Chef/ChefBanner';
 const ChefLayout = () => {
     return (
         <>
-            <div className='shadow shadow-slate-500 mb-[2px]'>
+            <div className='shadow shadow-slate-500 mb-[1px]'>
                 <NavigationBar></NavigationBar>
             </div>
             <ChefBanner></ChefBanner>
             <div className='max-w-6xl mx-auto mb-20 mt-16 grid grid-cols-[3fr,_1fr] gap-10'>
-                <div className='border'>
+                <>
                     <ChefDetails></ChefDetails>
-                </div>
+                </>
                 <div className='border'>
                     right side
                 </div>
