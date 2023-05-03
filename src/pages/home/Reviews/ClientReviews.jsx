@@ -16,7 +16,9 @@ const ClientReviews = () => {
                     <img src={reviews} alt="clients image" className='h-full' />
                 </div>
                 <div className='flex flex-col bg-gray-50 justify-center gap-10 py-20'>
+
                     {/* client one  */}
+
                     <div className='flex items-center gap-5 px-10 bg-gray-50'>
                         <div className='w-52'>
                             <img src={client1} alt="client image" className='object-cover rounded-full border border-black' />
@@ -32,7 +34,7 @@ const ClientReviews = () => {
                                     <HiStar className='text-orange-400'></HiStar>
                                 </span>
                             </span>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ullam rem voluptatem molestias qui inventore debitis nobis eos consequatur officiis.</p>
+                            <p>The Chef Point is a must-visit restaurant! The food is amazing, and the service is top-notch. The atmosphere is cozy, and the staff is friendly.</p>
                         </div>
                     </div>
 
@@ -53,7 +55,7 @@ const ClientReviews = () => {
                                     <HiStar className='text-orange-400'></HiStar>
                                 </span>
                             </span>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum ullam rem voluptatem molestias qui inventore debitis nobis eos consequatur officiis.</p>
+                            <p>I highly recommend this restaurant to anyone looking for a delicious and memorable dining experience.</p>
                         </div>
                     </div>
                 </div>

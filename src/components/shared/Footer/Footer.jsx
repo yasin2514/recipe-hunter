@@ -7,7 +7,7 @@ const Footer = () => {
                 <div className="lg:grid grid-cols-[1.3fr_3fr]  gap-20">
                     <div className='flex flex-col gap-1'>
                         <h3 className="text-white text-[2rem] font-medium">The Chef Point</h3>
-                        <p className='text-[1.2rem] text-gray-300'>Explore thousands of job opportunities with all the information you need. Its your future. Come find it. Manage all your job application from start to finish.</p>
+                        <p className='text-[1.2rem] text-gray-300'>The Chef Point is a popular restaurant known for its delicious food, friendly staff, and cozy atmosphere. Located in USA, it offers classic American cuisine to international flavors.</p>
                     </div>
                     <div className='grid mt-6 lg:mt-0 lg:place-content-start grid-cols-2 lg:grid-cols-4 gap-10  '>
                         <div className='flex flex-col gap-1'>

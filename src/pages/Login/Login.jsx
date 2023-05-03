@@ -67,6 +67,8 @@ const Login = () => {
                     <h1 className="text-5xl font-bold mb-10 text-center text-blue-600">Login!</h1>
                     <div className="card flex-shrink-0 w-full  shadow-2xl  bg-base-100">
 
+                        {/* form start */}
+
                         <form className="card-body" onSubmit={handleLogin}>
                             <div className="form-control">
                                 <label className="label" for='email'>
@@ -92,6 +94,9 @@ const Login = () => {
                                 <button className="btn btn-primary">Login</button>
                             </div>
                         </form>
+
+                        {/* form end */}
+
                         <div className='w-full px-8 mb-5'>
                             <button className='btn w-full' onClick={handleGoogleLogin}>Login With Google</button>
                             <button className='btn btn-success w-full my-5' onClick={handleGithubLogin}>Login With Github</button>

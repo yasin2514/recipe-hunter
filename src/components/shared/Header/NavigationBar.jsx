@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { HiBars3CenterLeft, HiXMark } from "react-icons/hi2";
 import { AuthContext } from '../../../contexts/AuthProviders';
+import 'react-tooltip/dist/react-tooltip.css';
+import { Tooltip } from 'react-tooltip';
 
 const NavigationBar = () => {
     const [open, setOpen] = useState(false);
@@ -39,7 +41,8 @@ const NavigationBar = () => {
                     {
                         user ?
                             <>
-                                <img src={user?.photoURL} title={user?.displayName} className='w-10 h-10 rounded-full' alt="profile image" />
+                                <img data-tooltip-id='imgTool' data-tooltip-content={user?.displayName} src={user?.photoURL} className='w-10 h-10 rounded-full' alt="profile image" />
+                                <Tooltip id='imgTool'></Tooltip>
                                 <Link to={'/login'} onClick={handleLogOut}>Logout</Link>
                             </> :
                             <>

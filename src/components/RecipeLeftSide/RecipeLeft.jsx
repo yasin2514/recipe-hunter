@@ -26,6 +26,9 @@ const RecipeLeft = () => {
             </div>
             <div>
                 <h2 className='font-bold text-2xl text-blue-600'>RECENT RECIPES</h2>
+
+                {/* recipe 1 */}
+
                 <div className='flex items-center my-5 gap-4'>
                     <img src={img5} alt="" />
                     <span>
@@ -33,6 +36,9 @@ const RecipeLeft = () => {
                         <p>May 3,2023</p>
                     </span>
                 </div>
+
+                {/* recipe 2 */}
+
                 <div className='flex items-center my-5 gap-4'>
                     <img src={img2} alt="" />
                     <span>
@@ -40,6 +46,9 @@ const RecipeLeft = () => {
                         <p>May 3,2023</p>
                     </span>
                 </div>
+
+                {/* recipe 3 */}
+
                 <div className='flex items-center my-5 gap-4'>
                     <img src={img3} alt="" />
                     <span>
@@ -47,6 +56,9 @@ const RecipeLeft = () => {
                         <p>May 3,2023</p>
                     </span>
                 </div>
+
+                {/* recipe 4 */}
+
                 <div className='flex items-center my-5 gap-4'>
                     <img src={img4} alt="" />
                     <span>

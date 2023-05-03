@@ -58,6 +58,8 @@ const Registration = () => {
                     <h1 className="text-5xl font-bold mb-10 text-center text-blue-600">SignUp!</h1>
                     <div className="card flex-shrink-0 w-full  shadow-2xl  bg-base-100">
 
+                        {/* form start */}
+
                         <form className="card-body" onSubmit={handleSignUp}>
                             <div className="form-control">
                                 <label className="label" for='name'>
@@ -93,6 +95,9 @@ const Registration = () => {
                                 <button className="btn btn-primary">Sign Up</button>
                             </div>
                         </form>
+
+                        {/* form end */}
+
                         <div className='px-8 mb-10'>
                             <p className='text-green-600'>{success}</p>
                             <p className='text-red-600'>{error}</p>
