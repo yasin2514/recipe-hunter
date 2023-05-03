@@ -18,3 +18,8 @@
     background-size: cover;
     background-blend-mode:multiply;
 }
+.banner-4 {
+    background-image: url('./assets/banner-5.jpg');
+    background-size: cover;
+    background-blend-mode:multiply;
+}

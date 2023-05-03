@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 
 const LoginLayout = () => {
     return (
-        <div>
+        <>
             <div className='shadow shadow-slate-500'>
                 <NavigationBar></NavigationBar>
             </div>
@@ -15,7 +15,7 @@ const LoginLayout = () => {
             <div className=''>
                 <Footer></Footer>
             </div>
-        </div>
+        </>
     );
 };
 

@@ -17,7 +17,7 @@ const NavigationBar = () => {
     return (
         <nav className={`flex justify-between items-center py-5 max-w-[1300px] px-1 md:px-5 mx-auto lg:bg-transparent ${open ? "bg-white" : "bg-transparent"}`}>
             <div className='w-1/2'>
-                <Link to={'/main'} className='font-bold text-3xl sm:text-4xl '>The Chef Point</Link>
+                <Link to={'/home'} className='font-bold text-3xl sm:text-4xl '>The Chef Point</Link>
             </div>
             <span className='lg:hidden text-4xl font-extrabold' onClick={() => setOpen(!open)}>
                 {
@@ -30,7 +30,7 @@ const NavigationBar = () => {
 
                 <div className={`flex lg:flex-row lg:gap-16   ${open ? "flex-col gap-2 mb-5 lg:m-0 " : ""}`}>
 
-                    <NavLink className={({ isActive }) => isActive ? "text-sky-600" : ''} to={'/main'}>Home</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "text-sky-600" : ''} to={'/home'}>Home</NavLink>
                     <NavLink className={({ isActive }) => isActive ? "text-sky-600" : ''} to={'/blog'}>Blog</NavLink>
                     <NavLink className={({ isActive }) => isActive ? "text-sky-600" : ''} to={'/about'}>Subscribe</NavLink>
 
