@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Loading from '../../components/Loading';
+import { AuthContext } from '../../contexts/AuthProviders';
 
 const Subscribe = () => {
+    const { loading } = useContext(AuthContext);
+
+    if (loading) {
+        return <Loading></Loading>
+    }
     return (
         <div className='text-center'>
             <h2 className='text-3xl md:text-4xl font-bold mb-4 text-black'>Special Offers For New Subscribers </h2>

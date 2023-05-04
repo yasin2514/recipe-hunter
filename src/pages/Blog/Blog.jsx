@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Pdf from "react-to-pdf";
+import { AuthContext } from '../../contexts/AuthProviders';
+import Loading from '../../components/Loading';
 const ref = React.createRef();
 
 const Blog = () => {
     const [numPages, setNumPages] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
     const ref = React.createRef();
+    const { loading } = useContext(AuthContext);
+
+    if (loading) {
+        return <Loading></Loading>
+    }
 
     return (
         <div ref={ref}>

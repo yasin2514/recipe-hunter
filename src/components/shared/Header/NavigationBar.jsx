@@ -34,7 +34,7 @@ const NavigationBar = () => {
 
                     <NavLink className={({ isActive }) => isActive ? "text-sky-600" : ''} to={'/home'}>Home</NavLink>
                     <NavLink className={({ isActive }) => isActive ? "text-sky-600" : ''} to={'/blog'}>Blog</NavLink>
-                    <NavLink className={({ isActive }) => isActive ? "text-sky-600" : ''} to={'/about'}>Subscribe</NavLink>
+                    <NavLink className={({ isActive }) => isActive ? "text-sky-600" : ''} to={'/subscribe'}>Subscribe</NavLink>
 
                 </div>
                 <div className='lg:flex items-center gap-4 text-[1.2rem]'>

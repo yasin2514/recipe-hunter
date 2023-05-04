@@ -5,12 +5,13 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProviders';
 import { updateProfile } from 'firebase/auth';
 
-
 const Registration = () => {
     const { createUser } = useContext(AuthContext);
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
     const [accept, setAccept] = useState(true);
+
+
 
     const handleSignUp = event => {
         event.preventDefault();
@@ -98,6 +99,10 @@ const Registration = () => {
                                     <p className="label-text-alt">Already have an Account? <Link className='link link-hover text-red-500' to={'/login'}>Login Here</Link></p>
                                 </label>
                             </div>
+                            <div >
+                                <p className='text-green-600'>{success}</p>
+                                <p className='text-red-600'>{error}</p>
+                            </div>
                             <div className="form-control mt-6">
                                 <button disabled={accept} className="btn btn-primary">Sign Up</button>
                             </div>
@@ -105,10 +110,7 @@ const Registration = () => {
 
                         {/* form end */}
 
-                        <div className='px-8 mb-10'>
-                            <p className='text-green-600'>{success}</p>
-                            <p className='text-red-600'>{error}</p>
-                        </div>
+
                     </div>
                 </div>
             </div>

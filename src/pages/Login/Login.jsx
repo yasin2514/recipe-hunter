@@ -53,6 +53,7 @@ const Login = () => {
                 setError(error.message);
             })
     }
+
     return (
         <div className="hero min-h-screen ">
             <div className="hero-content flex-col lg:flex-row-reverse w-full">
@@ -90,6 +91,10 @@ const Login = () => {
                                     <p className="label-text-alt">New User? <Link className='link link-hover text-red-600' to={'/register'}>Register Here</Link></p>
                                 </label>
                             </div>
+                            <div >
+                                <p className='text-green-600'>{success}</p>
+                                <p className='text-red-600'>{error}</p>
+                            </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
                             </div>
@@ -101,10 +106,7 @@ const Login = () => {
                             <button className='btn w-full' onClick={handleGoogleLogin}>Login With Google</button>
                             <button className='btn btn-success w-full my-5' onClick={handleGithubLogin}>Login With Github</button>
                         </div>
-                        <div className='px-8 mb-10'>
-                            <p className='text-green-600'>{success}</p>
-                            <p className='text-red-600'>{error}</p>
-                        </div>
+
                     </div>
                 </div>
             </div>

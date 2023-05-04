@@ -10,6 +10,7 @@ import ChefLayout from "../layout/ChefLayout";
 import PrivateRoutes from "./PrivateRoutes";
 import ErrorPage from "../components/ErrorPage";
 import Terms from "../pages/Login/Terms";
+import Subscribe from "../pages/Subscribe/Subscribe";
 
 const router = createBrowserRouter([
     {
@@ -23,8 +24,8 @@ const router = createBrowserRouter([
                 element: <Blog></Blog>
             },
             {
-                path: '/about',
-                element: <About></About>
+                path: '/subscribe',
+                element: <Subscribe></Subscribe>
             },
             {
                 path: '/login',
