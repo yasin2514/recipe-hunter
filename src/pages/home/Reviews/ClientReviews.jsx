@@ -19,8 +19,8 @@ const ClientReviews = () => {
 
                     {/* client one  */}
 
-                    <div className='flex flex-wrap items-center gap-5 px-10 bg-gray-50'>
-                        <div className='w-52'>
+                    <div className='md:flex items-center gap-5 px-10'>
+                        <div className='w-28 flex-shrink-0'>
                             <img src={client1} alt="client image" className='object-cover rounded-full border border-black' />
                         </div>
                         <div>
@@ -40,12 +40,12 @@ const ClientReviews = () => {
 
                     {/* client two */}
 
-                    <div className='flex flex-wrap items-center gap-5 px-10 '>
-                        <div className='w-52'>
+                    <div className='md:flex items-center gap-5 px-10 '>
+                        <div className='w-28 flex-shrink-0'>
                             <img src={client2} alt="client image" className='object-cover rounded-full border border-black' />
                         </div>
                         <div>
-                            <span className='flex flex-wrap items-center justify-between my-5'>
+                            <span className='flex flex-wrap  items-center justify-between my-5'>
                                 <h2 className='text-2xl font-semibold'>Drew Rasen</h2>
                                 <span className='flex'>
                                     <HiStar className='text-orange-400'></HiStar>

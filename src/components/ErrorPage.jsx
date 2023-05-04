@@ -5,7 +5,7 @@ import errorImg from '../assets/error-2.png';
 const ErrorPage = () => {
     const error = useRouteError();
     return (
-        <div className='flex items-center justify-center gap-10 h-[100vh]'>
+        <div className='md:flex text-center my-32 md:my-0 items-center justify-center gap-10 h-[100vh]'>
             <div className='flex flex-col gap-4'>
                 <h1 className='text-2xl font-medium'>Oops!!!</h1>
                 <p className='font-medium'>Sorry, an unexpected error has occurred.</p>

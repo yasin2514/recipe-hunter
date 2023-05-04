@@ -16,7 +16,7 @@ const ChefDetails = () => {
             <h3 className='text-3xl font-bold text-center text-blue-600'>Total Recipes: {recipes?.length}</h3>
             <div>
                 {
-                    recipes?.map(recipe => <RecipeCard
+                    recipes && recipes.map(recipe => <RecipeCard
                         key={recipe?.id}
                         recipe={recipe}
                     ></RecipeCard>)

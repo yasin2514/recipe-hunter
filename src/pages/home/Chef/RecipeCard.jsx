@@ -35,7 +35,7 @@ const RecipeCard = ({ recipe }) => {
                 <h2 className="card-title">{name}</h2>
                 <div ><span className='font-medium'>Ingredients:</span>
                     {
-                        ingredients.map((item, i) => {
+                        ingredients?.map((item, i) => {
                             return <span key={i}> {item},</span>
                         })
                     }

@@ -57,7 +57,7 @@ const Login = () => {
         <div className="hero min-h-screen ">
             <div className="hero-content flex-col lg:flex-row-reverse w-full">
 
-                <div className="text-center lg:text-left w-full">
+                <div className="w-full ">
                     <Lottie
                         animationData={login}
                     />
@@ -65,7 +65,7 @@ const Login = () => {
 
                 <div className='w-full max-w-full'>
                     <h1 className="text-5xl font-bold mb-10 text-center text-blue-600">Login!</h1>
-                    <div className="card flex-shrink-0 w-full  shadow-2xl  bg-base-100">
+                    <div className="card md:flex-shrink-0 w-full  shadow-2xl  bg-base-100">
 
                         {/* form start */}
 
