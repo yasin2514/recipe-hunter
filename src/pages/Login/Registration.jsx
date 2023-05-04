@@ -10,6 +10,7 @@ const Registration = () => {
     const { createUser } = useContext(AuthContext);
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
+    const [accept, setAccept] = useState(true);
 
     const handleSignUp = event => {
         event.preventDefault();
@@ -86,13 +87,19 @@ const Registration = () => {
                                 <input type="password" id='password' placeholder="Your password" className="input input-bordered" name='password' required />
 
                             </div>
+                            <div className='form-control'>
+                                <label className="label cursor-pointer ">
+                                    <input onClick={() => setAccept(!accept)} type="checkbox" className="checkbox checkbox-primary h-5 w-5" />
+                                    <p className='label-text-alt ms-2 '>Accepts<Link to={'/terms'} className="text-blue-600 link link-hover"> Terms & Condition</Link> </p>
+                                </label>
+                            </div>
                             <div>
                                 <label className="label">
                                     <p className="label-text-alt">Already have an Account? <Link className='link link-hover text-red-500' to={'/login'}>Login Here</Link></p>
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Sign Up</button>
+                                <button disabled={accept} className="btn btn-primary">Sign Up</button>
                             </div>
                         </form>
 

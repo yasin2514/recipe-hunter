@@ -9,6 +9,7 @@ import LoginLayout from "../layout/LoginLayout";
 import ChefLayout from "../layout/ChefLayout";
 import PrivateRoutes from "./PrivateRoutes";
 import ErrorPage from "../components/ErrorPage";
+import Terms from "../pages/Login/Terms";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Registration></Registration>
+            },
+            {
+                path: '/terms',
+                element: <Terms></Terms>
             }
         ],
     },
