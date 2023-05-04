@@ -1,13 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { HiThumbUp } from "react-icons/hi";
-
+import LazyLoad from 'react-lazy-load';
 
 const ChefCard = ({ chef }) => {
     const { chefName, id, chefPicture, yearsOfExperience, numberOfRecipes, likes } = chef;
     return (
         <div className="card card-side bg-gray-50 shadow-md shadow-slate-400">
-            <figure className='w-full'><img src={chefPicture} alt="chef image" /></figure>
+            <figure className='w-full'>
+                <LazyLoad threshold={0.60}>
+                    <img src={chefPicture} alt="chef image" />
+                </LazyLoad>
+            </figure>
             <div className="card-body w-full">
                 <h2 className="card-title">{chefName}</h2>
                 <p>Years of experience: {yearsOfExperience} years</p>

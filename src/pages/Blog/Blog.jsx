@@ -1,14 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Pdf from "react-to-pdf";
+const ref = React.createRef();
 
 const Blog = () => {
+    const [numPages, setNumPages] = useState(null);
+    const [pageNumber, setPageNumber] = useState(1);
+    const ref = React.createRef();
+
     return (
-        <div>
-            <h2 className='text-4xl font-bold text-center mb-10 text-black'>Some Question and Answer</h2>
-            <div className='flex flex-col gap-8'>
+        <div ref={ref}>
+            <div className='flex items-center justify-center gap-5 mb-10'>
+                <h2 className='text-4xl font-bold text-center text-black'>Some Question and Answer</h2>
+                <span>
+                    <Pdf targetRef={ref} filename="code-example.pdf">
+                        {({ toPdf }) => <button className='btn btn-sm btn-primary' onClick={toPdf}>Download Pdf</button>}
+                    </Pdf>
+                </span>
+            </div>
+            <div className='flex flex-col gap-8 '>
 
                 {/* question-1 */}
 
-                <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                <div tabIndex={0} className="collapse collapse-open border border-base-300 bg-base-100 rounded-box">
                     <div className="collapse-title text-xl font-medium text-sky-600">
                         Tell us the differences between uncontrolled and controlled components.
                     </div>
@@ -19,7 +32,7 @@ const Blog = () => {
 
                 {/* question-2 */}
 
-                <div tabIndex={1} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                <div tabIndex={1} className="collapse collapse-open border border-base-300 bg-base-100 rounded-box">
                     <div className="collapse-title text-xl font-medium text-sky-600">
                         How to validate React props using PropTypes?
                     </div>
@@ -30,7 +43,7 @@ const Blog = () => {
 
                 {/* question-3 */}
 
-                <div tabIndex={2} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                <div tabIndex={2} className="collapse collapse-open border border-base-300 bg-base-100 rounded-box">
                     <div className="collapse-title text-xl font-medium text-sky-600">
                         Tell us the difference between nodejs and express js.
                     </div>
@@ -41,7 +54,7 @@ const Blog = () => {
 
                 {/* question-4 */}
 
-                <div tabIndex={3} className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box">
+                <div tabIndex={3} className="collapse collapse-open border border-base-300 bg-base-100 rounded-box">
                     <div className="collapse-title text-xl font-medium text-sky-600">
                         What is a custom hook, and why will you create a custom hook?
                     </div>
