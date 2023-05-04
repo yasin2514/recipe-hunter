@@ -3,11 +3,13 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProviders';
 import Lottie from "lottie-react";
 import login from '/public/93385-login.json';
+import { HiEyeOff, HiEye } from "react-icons/hi";
 
 const Login = () => {
     const { loginUser, googleLogin, gitHubLogin } = useContext(AuthContext);
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
+    const [showPass, setShowPass] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -52,8 +54,11 @@ const Login = () => {
             .catch(error => {
                 setError(error.message);
             })
-    }
+    };
 
+    const handleShowPass = () => {
+        setShowPass(!showPass)
+    };
     return (
         <div className="hero min-h-screen ">
             <div className="hero-content flex-col lg:flex-row-reverse w-full">
@@ -81,7 +86,14 @@ const Login = () => {
                                 <label className="label" for='password'>
                                     <span className="label-text text-xl font-medium">Password</span>
                                 </label>
-                                <input type="password" id='password' placeholder="Your password" className="input input-bordered" name='password' required />
+                                <div className='relative'>
+                                    <input type={showPass ? "text" : "password"} id='password' placeholder="Your password" className="input input-bordered w-full" name='password' required />
+                                    <span onClick={handleShowPass} className='absolute top-4 right-4 text-gray-500'>
+                                        {
+                                            showPass ? <HiEye></HiEye> : <HiEyeOff></HiEyeOff>
+                                        }
+                                    </span>
+                                </div>
                                 <label className="label">
                                     <a href="" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>

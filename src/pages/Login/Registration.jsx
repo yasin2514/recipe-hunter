@@ -4,12 +4,16 @@ import register from '/public/107800-login-leady.json';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProviders';
 import { updateProfile } from 'firebase/auth';
+import { HiEyeOff, HiEye } from "react-icons/hi";
+
 
 const Registration = () => {
     const { createUser } = useContext(AuthContext);
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
     const [accept, setAccept] = useState(true);
+    const [showPass, setShowPass] = useState(false);
+
 
 
 
@@ -45,7 +49,11 @@ const Registration = () => {
             photoURL,
         })
 
-    }
+    };
+
+    const handleShowPass = () => {
+        setShowPass(!showPass)
+    };
     return (
         <div className="hero min-h-screen ">
             <div className="hero-content flex-col lg:flex-row-reverse w-full">
@@ -81,13 +89,21 @@ const Registration = () => {
                                 </label>
                                 <input type="email" id='email' placeholder="Your email" className="input input-bordered" name='email' required />
                             </div>
+
                             <div className="form-control">
                                 <label className="label" for='password'>
                                     <span className="label-text text-xl font-medium">Password</span>
                                 </label>
-                                <input type="password" id='password' placeholder="Your password" className="input input-bordered" name='password' required />
-
+                                <div className='relative'>
+                                    <input type={showPass ? "text" : "password"} id='password' placeholder="Your password" className="input input-bordered w-full" name='password' required />
+                                    <span onClick={handleShowPass} className='absolute top-4 right-4 text-gray-500'>
+                                        {
+                                            showPass ? <HiEye></HiEye> : <HiEyeOff></HiEyeOff>
+                                        }
+                                    </span>
+                                </div>
                             </div>
+
                             <div className='form-control'>
                                 <label className="label cursor-pointer ">
                                     <input onClick={() => setAccept(!accept)} type="checkbox" className="checkbox checkbox-primary h-5 w-5" />
