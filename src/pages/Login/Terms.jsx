@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Terms = () => {
     return (
-        <div>
+        <div className='max-w-full'>
             <div>
                 <h2 className='text-3xl font-bold'>Please read Carefully Accepts Terms & Condition </h2>
                 <span className='flex flex-col gap-4 my-10'>
@@ -15,7 +15,7 @@ const Terms = () => {
                 </span>
 
             </div>
-            <button className='btn btn-primary '><Link to={'/register'}> Go Back to Registration</Link> </button>
+            <Link className='link link-hover text-primary' to={'/register'}> Go Back to Registration</Link>
         </div>
     );
 };

@@ -7,10 +7,10 @@ const ChefBanner = () => {
     const chef = useLoaderData();
     const { id, chefPicture, chefName, yearsOfExperience, numberOfRecipes, likes, description } = chef;
     return (
-        <div className='banner-4 flex items-center px-10' >
-            <div className=' w-4/5 py-10  flex justify-center'>
+        <div className='banner-4 md:flex md:gap-10 items-center px-10 pb-10 md:pb-0' >
+            <div className='lg:w-4/5 py-10  flex justify-center items-center'>
                 <LazyLoad threshold={0.60}>
-                    <img src={chefPicture} alt="chef image" className='object-cover bg-gray-900 rounded-full  border-black' />
+                    <img src={chefPicture} alt="chef image" className='object-cover  lg:w-full bg-gray-900 rounded-full  border-black' />
                 </LazyLoad>
             </div>
             <div className=" w-full flex flex-col gap-2 font-medium text-black">

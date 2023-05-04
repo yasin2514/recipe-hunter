@@ -9,8 +9,8 @@ const Blog = () => {
 
     return (
         <div ref={ref}>
-            <div className='flex items-center justify-center gap-5 mb-10'>
-                <h2 className='text-4xl font-bold text-center text-black'>Some Question and Answer</h2>
+            <div className='flex flex-wrap items-center justify-center gap-5 mb-10'>
+                <h2 className='text-3xl md:text-4xl font-bold text-center text-black'>Some Question and Answer</h2>
                 <span>
                     <Pdf targetRef={ref} filename="code-example.pdf">
                         {({ toPdf }) => <button className='btn btn-sm btn-primary' onClick={toPdf}>Download Pdf</button>}

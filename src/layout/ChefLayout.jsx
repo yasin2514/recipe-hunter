@@ -13,7 +13,7 @@ const ChefLayout = () => {
                 <NavigationBar></NavigationBar>
             </div>
             <ChefBanner></ChefBanner>
-            <div className='max-w-6xl mx-auto mb-20 mt-16 grid grid-cols-[3fr,_1fr] gap-10'>
+            <div className='w-full max-w-6xl mx-auto mb-20 mt-16 grid px-5 lg:px-0  lg:grid-cols-[3fr,_1fr] gap-10'>
                 <ChefDetails></ChefDetails>
                 <div className='border shadow bg-gray-50 rounded-lg my-[75px] px-4 py-6'>
                     <RecipeLeft></RecipeLeft>

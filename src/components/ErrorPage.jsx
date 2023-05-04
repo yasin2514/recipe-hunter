@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRouteError } from 'react-router-dom';
+import { Link, useRouteError } from 'react-router-dom';
 import errorImg from '../assets/error-2.png';
 
 const ErrorPage = () => {
@@ -15,6 +15,7 @@ const ErrorPage = () => {
             </div>
             <div className=''>
                 <img src={errorImg} alt="no image" />
+                <Link className='link link-hover text-primary' to={'/home'}>Back To Home Page</Link>
             </div>
         </div>
     );

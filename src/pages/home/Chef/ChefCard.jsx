@@ -6,13 +6,13 @@ import LazyLoad from 'react-lazy-load';
 const ChefCard = ({ chef }) => {
     const { chefName, id, chefPicture, yearsOfExperience, numberOfRecipes, likes } = chef;
     return (
-        <div className="card card-side bg-gray-50 shadow-md shadow-slate-400">
+        <div className="card md:card-side bg-gray-50 shadow-md shadow-slate-400">
             <figure className='w-full'>
                 <LazyLoad threshold={0.60}>
                     <img src={chefPicture} alt="chef image" />
                 </LazyLoad>
             </figure>
-            <div className="card-body w-full">
+            <div className="flex flex-col items-center gap-2 justify-center md:items-start py-5 lg:card-body w-full">
                 <h2 className="card-title">{chefName}</h2>
                 <p>Years of experience: {yearsOfExperience} years</p>
                 <p>Total recipes: {numberOfRecipes}</p>

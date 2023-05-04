@@ -15,7 +15,7 @@ const LoginLayout = () => {
             <div className='shadow shadow-slate-500'>
                 <NavigationBar></NavigationBar>
             </div>
-            <div className='max-w-6xl mx-auto mb-20 mt-16'>
+            <div className='max-w-6xl mx-auto mb-20 mt-16 px-5 lg:px-0'>
                 <Outlet></Outlet>
             </div>
             <div className=''>

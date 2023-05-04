@@ -11,7 +11,7 @@ const ClientReviews = () => {
                 <h2 className='text-4xl font-bold text-center text-black'><span className='text-sky-600'>CLIENT </span>REVIEWS</h2>
                 <p className='text-green-600 font-medium text-center mt-3'>What Client Say</p>
             </div>
-            <div className='flex'>
+            <div className='lg:flex'>
                 <div className='w-full'>
                     <img src={reviews} alt="clients image" className='h-full' />
                 </div>
@@ -19,12 +19,12 @@ const ClientReviews = () => {
 
                     {/* client one  */}
 
-                    <div className='flex items-center gap-5 px-10 bg-gray-50'>
+                    <div className='flex flex-wrap items-center gap-5 px-10 bg-gray-50'>
                         <div className='w-52'>
                             <img src={client1} alt="client image" className='object-cover rounded-full border border-black' />
                         </div>
                         <div>
-                            <span className='flex items-center justify-between my-5'>
+                            <span className='flex flex-wrap items-center justify-between my-5'>
                                 <h2 className='text-2xl font-semibold'>Dain Rase</h2>
                                 <span className='flex'>
                                     <HiStar className='text-orange-400'></HiStar>
@@ -40,12 +40,12 @@ const ClientReviews = () => {
 
                     {/* client two */}
 
-                    <div className='flex items-center gap-5 px-10 '>
+                    <div className='flex flex-wrap items-center gap-5 px-10 '>
                         <div className='w-52'>
                             <img src={client2} alt="client image" className='object-cover rounded-full border border-black' />
                         </div>
                         <div>
-                            <span className='flex items-center justify-between my-5'>
+                            <span className='flex flex-wrap items-center justify-between my-5'>
                                 <h2 className='text-2xl font-semibold'>Drew Rasen</h2>
                                 <span className='flex'>
                                     <HiStar className='text-orange-400'></HiStar>

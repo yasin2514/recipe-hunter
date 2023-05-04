@@ -63,7 +63,7 @@ const Login = () => {
                     />
                 </div>
 
-                <div className=' w-full'>
+                <div className='w-full max-w-full'>
                     <h1 className="text-5xl font-bold mb-10 text-center text-blue-600">Login!</h1>
                     <div className="card flex-shrink-0 w-full  shadow-2xl  bg-base-100">
 

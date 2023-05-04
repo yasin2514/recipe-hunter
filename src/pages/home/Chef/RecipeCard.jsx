@@ -25,10 +25,10 @@ const RecipeCard = ({ recipe }) => {
 
     }
     return (
-        <div className="card card-side shadow shadow-gray-300 my-10">
-            <figure className='border flex-shrink-0 w-52'>
+        <div className="card pt-10 md:pt-0 md:card-side  shadow shadow-gray-300 my-10">
+            <figure className='flex-shrink-0  md:w-52'>
                 <LazyLoad threshold={0.60}>
-                    <img src={image} alt="recipe image" className='h-full object-cover' />
+                    <img src={image} alt="recipe image" className='h-full object-cover rounded-lg md:rounded-none' />
                 </LazyLoad>
             </figure>
             <div className="card-body">

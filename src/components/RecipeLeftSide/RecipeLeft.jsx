@@ -29,7 +29,7 @@ const RecipeLeft = () => {
 
                 {/* recipe 1 */}
 
-                <div className='flex items-center my-5 gap-4'>
+                <div className='flex flex-wrap items-center my-5 gap-4'>
                     <img src={img5} alt="" />
                     <span>
                         <h5 className='text-xl font-medium'>Tater tots</h5>
@@ -39,7 +39,7 @@ const RecipeLeft = () => {
 
                 {/* recipe 2 */}
 
-                <div className='flex items-center my-5 gap-4'>
+                <div className='flex flex-wrap items-center my-5 gap-4'>
                     <img src={img2} alt="" />
                     <span>
                         <h5 className='text-xl font-medium'>Cobb salad</h5>
@@ -49,7 +49,7 @@ const RecipeLeft = () => {
 
                 {/* recipe 3 */}
 
-                <div className='flex items-center my-5 gap-4'>
+                <div className='flex flex-wrap items-center my-5 gap-4'>
                     <img src={img3} alt="" />
                     <span>
                         <h5 className='text-xl font-medium'>Clam chowder</h5>
@@ -59,7 +59,7 @@ const RecipeLeft = () => {
 
                 {/* recipe 4 */}
 
-                <div className='flex items-center my-5 gap-4'>
+                <div className='flex flex-wrap items-center my-5 gap-4'>
                     <img src={img4} alt="" />
                     <span>
                         <h5 className='text-xl font-medium'>Smithfield ham</h5>
